@@ -1,1 +1,1 @@
-# medcine
+# MagazineGustagol

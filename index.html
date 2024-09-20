@@ -21,7 +21,7 @@
   <link href="https://cdn.jsdelivr.net/npm/swiper@9.4.0/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 
 </head>
 <body>
@@ -53,21 +53,29 @@
               </a>
 
               <!-- Menu -->
-               <nav>
+               <nav id="navmenu" class="navmenu">
                 <ul>
-                  <li>  <a href=""> Home </a> </li>
-                  <li>  <a href=""> Sobre </a> </li>
-                  <li>  <a href=""> Produtos </a> </li>
-                  <li>  <a href=""> Carrinho </a> </li>
-                  <li>  <a href=""> Contato </a> </li>
-                  <li>  <a href=""> Mais Opções </a> 
-                   <ul>
-                      <li> Opção 1 </li>
-                      <li> Opção 2 </li>
-                      <li> Submenu 
-                       <ul>
-                          <li> Submenu 1 </li>
-                          <li> Submenu 2 </li>
+                  <li>  <a href="#hero" class="active"> Home </a> </li>
+                  <li>  <a href="#sobre"> Sobre </a> </li>
+                  <li>  <a href="#produtos"> Produtos </a> </li>
+                  <li>  <a href="#carrinho"> Carrinho </a> </li>
+                  <li>  <a href="#contato"> Contato </a> </li>
+                  <li class="dropdown">  
+                    <a href="#">
+                      <span> Mais Opções </span>
+                      <i class="bi bi-chevron-down"></i>
+                    </a> 
+                    <ul>
+                      <li><a href="#"> Opção 1 </a></li>
+                      <li><a href="#"> Opção 2 </a></li>
+                      <li class="dropdown">
+                        <a href="#">
+                          <span> Submenu </span>
+                          <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                          <li><a href="#"> Submenu 1 </a></li>
+                          <li><a href="#"> Submenu 2 </a></li>
                         </ul>
                       </li> <!-- Fim Submenu -->
                     </ul>
@@ -86,11 +94,29 @@
   </header>
   <!-- fim header -->
 
-  <main>
-    <div></div>
+  <main class="main">
+
+  <!-- HERO section -->
+    <section id="hero" class="hero section">
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+       <!-- Foto 1 / Slide 1 -->
+        <div class="carousel-item active" >
+          <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">
+
+          <div class="container">
+            <h2>Bem-vindo à Magazine Gustagol</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vitae possimus, aspernatur inventore nostrum consequuntur numquam eligendi a eum necessitatibus totam suscipit incidunt dignissimos, iure voluptatum. Eos doloribus exercitationem dicta?</p>
+          </div>
+        </div><!-- Fim Slide 1 -->
+      </div><!-- Fim do Hero Carousel -->
+
+    </section>
   </main>
   <footer>
     <div></div>
   </footer>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>

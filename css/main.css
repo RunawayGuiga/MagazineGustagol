@@ -526,16 +526,257 @@ left: calc(50% - 47px);
 top: calc(50% - 47px);
 }
 
-/* Pulsating Play Button */
+/* Pulsating Play Button
+------------------------------*/
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(
-    var(--accent-color) 50%,
-    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
-  );
+  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
   border-radius: 50%;
   display: block;
   position: relative;
   overflow: hidden;
+}
+
+.pulsating-play-btn:before { 
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-play-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgb(89, 215, 253);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.pulsating-play-btn:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms;
+}
+
+.pulsating-play-btn:hover:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+.pulsating-play-btn:hover:after {
+  border-left: 15px solid var(--accent-color);
+  transform: scale(20);
+}
+
+@keyframes pulsate-play-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+
+
+/* Features // Caracteristicas  */
+
+.features .features-image {
+  position: relative;
+  min-height: 400px;
+}
+
+.features .features-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.features h3{
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.features .icon-box i {
+  color: #00b0c4;
+  background: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  font-size: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  line-height: 5;
+  box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.features .icon-box:hover i {
+  background-color: #00b0c4;
+  color: whitesmoke;
+}
+
+.features .icon-box h4{
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.features .icon-box h4 a {
+  color: #00b0c4;
+  transition: 0.3s;
+}
+
+.features .icon-box h4 a:hover{
+  color:#2193df;
+}
+
+.features .icon-box p{
+  line-height: 50px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.produtos .service-item .icon{
+  background: whitesmoke;
+  color: #00b0c4;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.produtos .service-item h3{
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-size: 22px;
+  transition: 0.3s;
+  position: relative;
+  color: #272727;
+}
+
+.produtos .service-item h3:after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #00b0c4;
+}
+
+/* Consulta / Forms */
+.carrinho .email-form{
+  width: 100%;
+}
+
+.carrinho .email-form .form-group{
+  padding-bottom: 8px;
+}
+
+.carrinho .email-form input,
+.carrinho .email-form textarea,
+.carrinho .email-form select{
+  color: #2193df;
+  background-color: whitesmoke;
+  border-color: color-mix(in srgb, #2193df, transparent 80%);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 10px !important;
+}
+
+.carrinho .email-form input::placeholder,
+.carrinho .email-form textarea::placeholder,
+.carrinho .email-form select::placeholder{
+  color: color-mix(in srgb, #2193df, transparent 50%);
+}
+
+.carrinho .email-form input:focus,
+.carrinho .email-form textarea:focus,
+.carrinho .email-form select:focus{
+  border-color: #2193df;
+}
+
+.carrinho .email-form input,
+.carrinho .email-form select{
+  height: 44px;
+}
+
+.carrinho .email-form textarea{
+  padding: 10px 12px;
+}
+
+.carrinho .email-form button{
+  background: #2193df;
+  color: whitesmoke;
+  border: 0;
+  padding: 10px 35px;
+  font-size: 20px;
+  transition: 0.4s;
+  border-radius: 6px;
+}
+
+.contato .contato-container .contato-item{
+  background: #ccc;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 15px;
+  /* border: ; */
+  border-radius: 5px;
+  overflow: hidden;
+}
+.contato .contato-container .contato-item h3:hover{
+  color: #2193df;
+}
+
+.contato .contato-container .contato-item  .contato-content{
+  display: grid;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
